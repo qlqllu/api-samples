@@ -1,0 +1,69 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>
+    Search widget with multiple sources | Sample | ArcGIS API for JavaScript
+    4.24
+  </title>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.24/esri/themes/light/main.css" />
+  <script src="https://js.arcgis.com/4.24/"></script>
+
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer",
+      "esri/widgets/Search"
+    ], (Map, MapView, FeatureLayer, Search) => {
+      const map = new Map({
+        basemap: "dark-gray-vector"
+      });
+
+      const view = new MapView({
+        container: "viewDiv",
+        map: map,
+        center: [-97, 38], // lon, lat
+        scale: 10000000
+      });
+
+      const searchWidget = new Search({
+        view: view,
+        allPlaceholder: "District or Senator",
+        includeDefaultSources: false,
+        sources: [
+          {
+            name: "ArcGIS World Geocoding Service",
+            placeholder: "example: Nuuk, GRL",
+            apiKey: "AAPK4372680a8f524330b81c07afe3e10a11lQnfdAqQqP2nAdv0gkl0ZByCT3V_MTc56OvkfoOZ_YkVnYVX58BiFQ-Cl5Ls4YYX",
+            singleLineFieldName: "SingleLine",
+            url: "https://geocode-api.arcgis.com/arcgis/rest/services/World/GeocodeServer"
+          }
+        ]
+      });
+
+      // Add the search widget to the top left corner of the view
+      view.ui.add(searchWidget, {
+        position: "top-right"
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv"></div>
+</body>
+
+</html>
