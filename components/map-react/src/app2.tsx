@@ -8,13 +8,13 @@ esriIntl.setLocale('zh-cn')
 esriConfig.assetsPath = "https://js.arcgis.com/4.29/@arcgis/core/assets"
 
 /**
- * Put components inside the ArcgisMap component.
+ * Use referenceElement.
  */
 export function App() {
   return <React.StrictMode>
-    <ArcgisMap item-id="d5dda743788a4b0688fe48f43ae7beb9">
-      <ArcgisSearch position="top-right"></ArcgisSearch>
-      <ArcgisLegend position="bottom-left"></ArcgisLegend>
+    <ArcgisMap item-id="d5dda743788a4b0688fe48f43ae7beb9" id='map1'>
     </ArcgisMap>
+
+    <ArcgisLegend referenceElement='#map1'></ArcgisLegend>
   </React.StrictMode>
 }
