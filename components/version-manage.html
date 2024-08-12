@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Map components AMD template</title>
+    <link rel="icon" href="data:;base64,=" />
+
+    <style>
+      html,
+      body {
+        background-color: var(--calcite-ui-foreground-2);
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+    <!-- Load the ArcGIS Maps SDK for JavaScript -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.30/"></script>
+
+    <!-- Load the Map Components -->
+    <script type="module" src="https://js.arcgis.com/map-components/4.30/arcgis-map-components.esm.js"></script>
+  </head>
+  <body>
+    <arcgis-map item-id="2c57c42dcadc43eeb30e5db67f7e2b70">
+      <arcgis-version-management position="top-right"
+        label="Version Management" allow-editing="false">
+      </arcgis-version-management>
+    </arcgis-map>
+  </body>
+</html>
