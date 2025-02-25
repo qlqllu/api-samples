@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>
+    Calcite Popover
+  </title>
+
+  <style>
+    .container {
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+  </style>
+
+  <script type="module" src="https://js.arcgis.com/calcite-components/3.0.0/calcite.esm.js"></script>
+</head>
+
+<body>
+  <div>
+    If you click the Button 2 first, then click Button 1, the popover for Button 1 will be displayed below Button 2.
+  </div>
+
+  <br/>
+
+  <div class="container">
+    <calcite-popover heading="Title" label="Title" reference-element="popover-button1" closable
+      overlay-positioning="absolute" placement="bottom">
+      <p>
+          Popovers content for button 1
+      </p>
+    </calcite-popover>
+    <calcite-button id="popover-button1">Button 1</calcite-button>
+  </div>
+
+  <div class="container">
+    <calcite-popover heading="Title" label="Title" reference-element="popover-button2" closable
+      overlay-positioning="absolute" placement="bottom">
+      <p>
+        Popovers content for button 2
+      </p>
+    </calcite-popover>
+    <calcite-button id="popover-button2">Button 2</calcite-button>
+  </div>
+
+</body>
+
+</html>
