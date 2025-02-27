@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>
+    Calcite Popover
+  </title>
+
+  <style>
+    .container {
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      overflow: hidden;
+      position: absolute;
+      z-index: 0;
+    }
+    .container-inner {
+      position: relative;
+      z-index: 0;
+    }
+  </style>
+
+  <script type="module" src="https://js.arcgis.com/calcite-components/3.0.0/calcite.esm.js"></script>
+</head>
+
+<body>
+  <div>
+    The popper is cut off in safari.
+  </div>
+
+  <br/>
+
+  <div class="container">
+    <div class="container-inner">
+      <calcite-popover heading="Title" label="Title" reference-element="popover-button1" closable
+        overlay-positioning="fixed" placement="bottom">
+        <p>
+            Popovers content for button 1
+        </p>
+      </calcite-popover>
+      <calcite-button id="popover-button1">Button 1</calcite-button>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
